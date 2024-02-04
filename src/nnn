@@ -1,0 +1,25 @@
+import React from 'react';
+import { Button, Form, FormControl, Nav, Navbar as NavbarBs } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+const urlSearch='https://api.themoviedb.org/3/search/movie?api_key=7c3f35114eaffed73b69a20883250db6'
+const Navbar = () => {
+return (
+<NavbarBs expand="lg" variant="dark">
+<NavbarBs.Brand as={Link} to="/" className="text-danger">
+<h3>Movies</h3>
+</NavbarBs.Brand>
+<NavbarBs.Toggle aria-controls="navbarScroll" />
+<NavbarBs.Collapse id="navbarScroll">
+<Nav className="me-auto my-2 my-lg-3" style={{ maxHeight: '100px' }} navbarScroll />
+<Form className="d-flex">
+<FormControl type="search" className="me-2" placeholder="Movie Search" aria-label="search" />
+<Button variant="outline-light" type="submit">
+Search
+</Button>
+</Form>
+</NavbarBs.Collapse>
+</NavbarBs>
+);
+};
+
+export default Navbar;
